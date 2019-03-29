@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>JavaScript Generator</title>
+
+	<link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all" />
+</head>
+<body>
+	<div class="tabs">
+		<div class="tabs__inner">
+			<div class="tabs__head">
+				<div class="radio" data-tab="#vanilla-tab">
+					<input type="radio" name="js-type" id="vanilla" value="vanilla" checked/>
+					
+					<label for="vanilla">Vanilla</label>
+				</div><!-- /.radio -->
+
+				<div class="radio" data-tab="#es6-tab">
+					<input type="radio" name="js-type" id="es6" value="es6" />
+					
+					<label for="es6">ES6+</label>
+				</div><!-- /.radio -->
+			</div><!-- /.tabs__head -->
+			
+			<div class="tabs__body">
+				<div id="vanilla-tab" class="tab active">
+					<ul id="vanilla-container"></ul>
+				</div><!-- /.tab -->
+				
+				<div id="es6-tab" class="tab">
+					<ul id="es6-container"></ul>
+				</div><!-- /.tab -->
+			</div><!-- /.tabs__body -->
+
+			<div class="tabs__actions">
+				<a href="#" id="submit" class="btn">Submit</a>
+
+				<input id="directory" type="file" webkitdirectory />
+			</div><!-- /.tabs__actions -->
+		</div><!-- /.tabs__inner -->
+	</div><!-- /.tabs -->
+</body>
+
+<script src="assets/js/main.js"></script>
+
+</html>

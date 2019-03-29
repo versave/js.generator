@@ -1,0 +1,19 @@
+{
+  "name": "js.generator",
+  "version": "1.0.0",
+  "description": "JS file generator with selected methods",
+  "main": "app.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/versave/js.generator"
+  },
+  "author": "Vasil Zhivkov",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^4.1.1",
+    "js-beautify": "^1.9.1"
+  }
+}
