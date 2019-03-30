@@ -1,36 +1,46 @@
 module.exports = class FileReader {
-	constructor(folder, container) {
+	constructor(items) {
 		this.fs = require('fs');
-		this.folder = folder;
-		this.container = container;
-
-		this.init();
+		this.items = items;
 	};
 
 	init() {
-		this
-			.fs
-				.readdir(this.folder, (err, files) => {
-					if(err) {
-						return err;
-					}
+		return new Promise((resolve, reject) => {
+			this
+				.items
+					.forEach((item, index) => {
+						const {folder, container} = item;
+						const itemIndex = index;
 
-					files.forEach((file, index) => {
-				    	const incrementor = document.querySelectorAll(`#checkbox-${index + 1}`).length ? 'a' : '';
-				    	const text = file.split('.js')[0].replace(/-/g, ' ');
+						this
+							.fs
+								.readdir(folder, (err, files) => {
+									if(err) {
+										return err;
+									}
 
-				    	document
-				    		.querySelector(this.container)
-				    			.insertAdjacentHTML('beforeend', `
-				    				<li>
-										<div class="checkbox">
-											<input type="checkbox" name="checkbox-${incrementor}${index + 1}" id="checkbox-${incrementor}${index + 1}" value="${file}">
+									files.forEach((file, index) => {
+								    	const incrementor = document.querySelectorAll(`#checkbox-${index + 1}`).length ? 'a' : '';
+								    	const text = file.split('.js')[0].replace(/-/g, ' ');
 
-											<label for="checkbox-${incrementor}${index + 1}">${text}</label>
-										</div>
-									</li>
-				    			`);
+								    	document
+								    		.querySelector(container)
+								    			.insertAdjacentHTML('beforeend', `
+								    				<li>
+														<div class="checkbox">
+															<input type="checkbox" name="checkbox-${incrementor}${index + 1}" id="checkbox-${incrementor}${index + 1}" value="${file}">
+
+															<label for="checkbox-${incrementor}${index + 1}">${text}</label>
+														</div>
+													</li>
+								    			`);
+
+								    	if(this.items.length == itemIndex + 1 && files.length == index + 1) {
+								    		resolve();
+								    	}
+									});
+								});
 					});
-				});
+		});
 	};
 };

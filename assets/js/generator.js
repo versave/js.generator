@@ -2,6 +2,7 @@ module.exports = class Generator {
 	constructor(directory, files, location) {
 		this.fs = require('fs');
 		this.beautify = require('js-beautify').js;
+		this.utils = require('./utils.js');
 		this.directory = `./assets/src/${directory}`;
 		this.filesPath = `${this.directory}/methods/`;
 		this.newFilePath = location;
@@ -68,6 +69,8 @@ module.exports = class Generator {
 					if(err) {
 						throw err;
 					}
+
+					setTimeout(() => this.utils.toggleLoader(false), 500);
 				});
 	};
 

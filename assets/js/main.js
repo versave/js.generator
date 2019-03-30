@@ -2,20 +2,34 @@ const electron = require('electron');
 const remote = electron.remote;
 const Generator = require('./assets/js/generator.js');
 const FileReader = require('./assets/js/file-reader.js');
+const utils = require('./assets/js/utils.js');
+const body = document.querySelector('body');
 const classes = {
-	active: 'active'
+	active: 'active',
+	load: 'load'
 };
 const settings = {
 	jsType: '',
 	files: []
 };
 
-// Create HTML lists
-new FileReader('./assets/src/vanilla/methods/', '#vanilla-container');
-new FileReader('./assets/src/es6/methods/', '#es6-container');
-
-// Get JS Type
+// Load in files and get JS type
 window.addEventListener('load', () => {
+	
+	// Create HTML lists
+	new FileReader([
+		{
+			folder: './assets/src/vanilla/methods/',
+			container: '#vanilla-container'
+		},
+		{
+			folder: './assets/src/es6/methods/',
+			container: '#es6-container'
+		}
+	]).init().then(() => {
+		utils.toggleLoader(false);
+	});
+	
 	settings.jsType = document.querySelector('.tabs .tabs__head input:checked').value;
 
 	document
@@ -31,7 +45,7 @@ window.addEventListener('load', () => {
 							.classList
 								.toggle(classes.active);
 
-						getSiblings(target).forEach(sibling => {
+						utils.getSiblings(target).forEach(sibling => {
 							sibling
 								.classList
 									.remove(classes.active);
@@ -52,6 +66,8 @@ document
 					.showOpenDialog({properties: ['openDirectory']}, path => {
 						const inputs = document.querySelectorAll('.tab.active input:checked');
 
+						utils.toggleLoader(true);
+
 						inputs.forEach(input => {
 							settings
 								.files
@@ -67,21 +83,3 @@ document
 					});
 
 		});
-
-// Get Siblings helper function
-function getSiblings(elem) {
-	const siblings = [];
-	let sibling = elem.parentNode.firstChild;
-
-	while(sibling) {
-		if (sibling.nodeType === 1 && sibling !== elem) {
-			siblings.push(sibling);
-		}
-		sibling = sibling.nextSibling
-	}
-
-	return siblings;
-};
-
-
-
