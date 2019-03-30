@@ -1,6 +1,156 @@
 /* ------------------------------------------------------------ *\
+	Includes
+\* ------------------------------------------------------------ */
+
+@import './partials/reset.css';
+
+/* ------------------------------------------------------------ *\
+	Base
+\* ------------------------------------------------------------ */
+
+body {
+	overflow-x: hidden; 
+	height: 100vh; 
+	padding: 20px 40px;
+	font-family: 'PT Sans', sans-serif;
+	font-size: 14px; 
+	background: url(images/background.jpg) no-repeat;
+	background-size: cover;
+	background-position: 50% 80%;
+	background-attachment: fixed;  
+	color: #f9f9f9; 
+}
+
+/* ------------------------------------------------------------ *\
+	Tabs
+\* ------------------------------------------------------------ */
+
+.tabs {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 20px; 
+}
+
+.tabs__head {
+	display: flex; 
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 30px; 
+	font-size: 25px; 
+}
+
+.tabs__body {
+	display: flex; 
+	justify-content: center;
+	margin-bottom: 50px; 
+	text-transform: capitalize; 
+}
+
+/* ------------------------------------------------------------ *\
 	Tab
 \* ------------------------------------------------------------ */
 
-.tab { display: none; }
-.tab.active { display: block; }
+.tab {
+	flex: 0 0 100%;
+	transform: translateX(-50%); 
+	opacity: .2; 
+	pointer-events: none;
+	transition: transform .3s, opacity .3s;
+}
+.tab + .tab {
+	transform: translateX(-50%); 
+}
+.tab.active {
+	opacity: 1; 
+	pointer-events: auto;
+}
+
+.tab.active:first-child {
+	transform: translateX(50%); 
+}
+.tab.active:first-child + .tab {
+	transform: translateX(50%); 
+}
+
+.tab__list {
+	display: flex; 
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0 -5px -5ppx;
+	list-style: none;
+}
+
+.tab__list li {
+	flex: 0 1 33.33%;
+	padding: 0 5px 5px;
+}
+
+/* ------------------------------------------------------------ *\
+	Checkbox
+\* ------------------------------------------------------------ */
+
+.checkbox label { position: relative; display: block; padding-left: 18px; padding: 8px 5px; margin-bottom: 20px; background: #fff; font-size: 15px; color: #000; text-align: center; transition: background .3s; user-select: none; }
+.checkbox label:before {
+	content: '';
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	height: 20px;
+	border-top: 1px solid #ffbfbf;
+	background: #fff;
+	transition: background .3s, border-color .3s;
+}
+.checkbox label:after {
+	content: 'Add';
+	position: absolute; 
+	left: 50%; 
+	bottom: -18px; 
+	transform: translateX(-50%);
+	font-size: 12px; 
+	font-style: italic;  
+}
+
+.checkbox input { position: absolute; z-index: -1; opacity: 0; }
+
+.checkbox input:checked + label,
+.checkbox input:checked + label:before {
+	background: #ffbfbf;
+	border-color: #fff;
+}
+.checkbox input:checked + label:after {
+	content: 'Remove'; 
+}
+
+/* ------------------------------------------------------------ *\
+	Radio
+\* ------------------------------------------------------------ */
+
+.radio { position: relative; margin: 0 20px; } 
+
+.radio input { position: absolute; z-index: -1; opacity: 0; }
+.radio label { position: relative; display: inline-block; padding-bottom: 5px; text-align: center; user-select: none; }
+.radio label:before { content: ''; position: absolute; left: 50%; transform: translateX(-50%); bottom: 0; width: 0; height: 5px; border-radius: 10px; background: #d4d4d4; transition: width .3s; }
+.radio input:checked + label:before { width: 110%; }
+
+/* ------------------------------------------------------------ *\
+	Button
+\* ------------------------------------------------------------ */
+
+.btn {
+	display: block;
+	width: 80%; 
+	margin: 0 auto; 
+	padding: 10px;
+	border-radius: 30px; 
+	background: #fff; 
+	font-size: 16px; 
+	color: #000; 
+	text-decoration: none; 
+	text-align: center; 
+	transition: .3s;
+}
+.btn:hover {
+	background: #d4d4d4; 
+}

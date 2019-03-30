@@ -17,6 +17,7 @@ module.exports = class FileReader {
 
 					files.forEach((file, index) => {
 				    	const incrementor = document.querySelectorAll(`#checkbox-${index + 1}`).length ? 'a' : '';
+				    	const text = file.split('.js')[0].replace(/-/g, ' ');
 
 				    	document
 				    		.querySelector(this.container)
@@ -25,7 +26,7 @@ module.exports = class FileReader {
 										<div class="checkbox">
 											<input type="checkbox" name="checkbox-${incrementor}${index + 1}" id="checkbox-${incrementor}${index + 1}" value="${file}">
 
-											<label for="checkbox-${incrementor}${index + 1}">${file.split('.js')[0]}</label>
+											<label for="checkbox-${incrementor}${index + 1}">${text}</label>
 										</div>
 									</li>
 				    			`);

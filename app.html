@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
 	<title>JavaScript Generator</title>
-
+	
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i" rel="stylesheet">
 	<link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all" />
 </head>
 <body>
@@ -24,18 +25,16 @@
 			
 			<div class="tabs__body">
 				<div id="vanilla-tab" class="tab active">
-					<ul id="vanilla-container"></ul>
+					<ul id="vanilla-container" class="tab__list"></ul>
 				</div><!-- /.tab -->
 				
 				<div id="es6-tab" class="tab">
-					<ul id="es6-container"></ul>
+					<ul id="es6-container" class="tab__list"></ul>
 				</div><!-- /.tab -->
 			</div><!-- /.tabs__body -->
 
 			<div class="tabs__actions">
-				<a href="#" id="submit" class="btn">Submit</a>
-
-				<input id="directory" type="file" webkitdirectory />
+				<a href="#" id="submit" class="btn">Create File</a>
 			</div><!-- /.tabs__actions -->
 		</div><!-- /.tabs__inner -->
 	</div><!-- /.tabs -->
