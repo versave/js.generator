@@ -13,7 +13,10 @@ const settings = {
 	files: []
 };
 
-// Load in files and get JS type
+
+/**
+ *	Load in files and get JS type
+ */
 window.addEventListener('load', () => {
 	
 	// Create HTML lists
@@ -26,9 +29,7 @@ window.addEventListener('load', () => {
 			folder: './assets/src/es6/methods/',
 			container: '#es6-container'
 		}
-	]).init().then(() => {
-		utils.toggleLoader(false);
-	});
+	]).init().then(() => utils.toggleLoader(false));
 	
 	settings.jsType = document.querySelector('.tabs .tabs__head input:checked').value;
 
@@ -55,7 +56,9 @@ window.addEventListener('load', () => {
 			});
 });
 
-// Run Generator
+/**
+ *	Run Generator
+ */
 document
 	.querySelector('#submit')
 		.addEventListener('click', e => {
