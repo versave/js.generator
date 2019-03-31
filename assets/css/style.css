@@ -40,10 +40,12 @@ body.load .loader { visibility: visible; opacity: 1; }
 	Checkbox
 \* ------------------------------------------------------------ */
 
-.checkbox label { position: relative; display: block; padding-left: 18px; padding: 8px 5px; margin-bottom: 20px; background: #fff; font-size: 15px; color: #000; text-align: center; transition: background .3s; user-select: none; }
+.checkbox { height: 100%; }
 
-.checkbox label:before { content: ''; position: absolute; top: 100%; left: 0; right: 0; height: 20px; border-top: 1px solid #ffbfbf; background: #fff; transition: background .3s, border-color .3s; }
-.checkbox label:after { content: 'Add'; position: absolute; left: 50%; bottom: -18px; transform: translateX(-50%); font-size: 12px; font-style: italic; }
+.checkbox label { position: relative; display: flex; justify-content: center; align-items: center; height: 100%; padding-left: 18px; padding: 8px 5px 28px; background: #fff; font-size: 15px; color: #000; text-align: center; transition: background .3s; user-select: none; }
+
+.checkbox label:before { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 20px; border-top: 1px solid #ffbfbf; background: #fff; transition: background .3s, border-color .3s; }
+.checkbox label:after { content: 'Add'; position: absolute; left: 50%; bottom: 3px; transform: translateX(-50%); font-size: 12px; font-style: italic; }
 
 .checkbox input { position: absolute; z-index: -1; opacity: 0; }
 
@@ -92,14 +94,6 @@ body.load .loader { visibility: visible; opacity: 1; }
 .sk-cube-grid .sk-cube7 { animation-delay: 0s; }
 .sk-cube-grid .sk-cube8 { animation-delay: 0.1s; }
 .sk-cube-grid .sk-cube9 { animation-delay: 0.2s; }
-
-@-webkit-keyframes sk-cubeGridScaleDelay {
-  0%, 70%, 100% {
-        transform: scale3D(1, 1, 1);
-  } 35% {
-        transform: scale3D(0, 0, 1); 
-  }
-}
 
 @keyframes sk-cubeGridScaleDelay {
   0%, 70%, 100% {
