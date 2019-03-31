@@ -11,8 +11,6 @@ app.on('ready', () => {
 		height: 600
 	});
 
-	// appWindow.setMenu(null);
-
 	appWindow.loadURL(url.format({
 		pathname: path.join(__dirname, 'app.html'),
 		protocol: 'file:',

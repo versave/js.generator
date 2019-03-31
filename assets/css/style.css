@@ -33,7 +33,7 @@ body.load .loader { visibility: visible; opacity: 1; }
 .tab.active:first-child { transform: translateX(50%); }
 .tab.active:first-child + .tab { transform: translateX(50%); }
 
-.tab__list { display: flex; flex-wrap: wrap; justify-content: center; margin: 0 -5px -10px; list-style: none; }
+.tab__list { display: flex; flex-wrap: wrap; margin: 0 -5px -10px; list-style: none; }
 .tab__list li { flex: 0 1 33.33%; padding: 0 5px 10px; }
 
 /* ------------------------------------------------------------ *\
@@ -53,6 +53,9 @@ body.load .loader { visibility: visible; opacity: 1; }
 .checkbox input:checked + label:before { background: #ffbfbf; border-color: #fff; }
 
 .checkbox input:checked + label:after { content: 'Remove'; }
+
+.checkbox:hover label { background: #efefef; }
+.checkbox:hover label:before { background: #efefef; }
 
 /* ------------------------------------------------------------ *\
 	Radio
