@@ -67,6 +67,8 @@ document
 			remote
 				.dialog
 					.showOpenDialog({properties: ['openDirectory']}, path => {
+						if(path == undefined) return;
+
 						const inputs = document.querySelectorAll('.tab.active input');
 						const inputsChecked = document.querySelectorAll('.tab.active input:checked');
 
