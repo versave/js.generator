@@ -67,22 +67,26 @@ document
 			remote
 				.dialog
 					.showOpenDialog({properties: ['openDirectory']}, path => {
-						const inputs = document.querySelectorAll('.tab.active input:checked');
+						const inputs = document.querySelectorAll('.tab.active input');
+						const inputsChecked = document.querySelectorAll('.tab.active input:checked');
 
 						utils.toggleLoader(true);
 
-						inputs.forEach(input => {
-							settings
-								.files
-									.push(input.value);
+						for(const input of inputs) {
+							if(input.checked) {
+								settings
+									.files
+										.push(input.value);
+							}
 
-							if(inputs.length == settings.files.length) {
+							if(inputsChecked.length == settings.files.length) {
 								new Generator(settings.jsType, settings.files, path[0]);
 
 								settings.files = [];
+
+								break;
 							}
-						});
-				
+						}				
 					});
 
 		});

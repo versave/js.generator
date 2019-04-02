@@ -24,11 +24,21 @@ module.exports = class Generator {
 							.then(methods => {
 								this.writeMethods(methods);
 							});
-		});	
+		}).catch(() => {
+			this
+				.editTemplate([''])
+					.then(methods => {
+						this.writeMethods(methods)
+					});
+		});
 	};
 
 	getMethods(folder, files) {
-		return new Promise(resolve => {
+		return new Promise((resolve, reject) => {
+			if(!files.length) {
+				reject();
+			}
+
 			files.forEach(file => {
 				this
 					.fs
