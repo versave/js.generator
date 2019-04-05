@@ -1,12 +1,12 @@
 /**
-*	Intro Parallax
-*/
+ *	Intro Parallax
+ */
 introParallax($parallaxElement) {
     const self = this;
 
     self
         .$win
-            .on('load scroll', function() {
+            .on('load scroll', () => {
                 $parallaxElement
                     .each(function() {
                         const $element = $(this);

@@ -1,6 +1,6 @@
 /**
-*	Slick Sliders
-*/
+ *	Slick Sliders
+ */
 slickSliders(sliders) {
 	sliders
 		.forEach(slider => {

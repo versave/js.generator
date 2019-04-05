@@ -1,6 +1,6 @@
 /**
-*	Slcik Sliders
-*/
+ *	Slcik Sliders
+ */
 app.slickSliders = function(sliders) {
 	sliders
 		.forEach(function(slider) {

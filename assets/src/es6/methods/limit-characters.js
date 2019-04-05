@@ -1,6 +1,6 @@
 /*
-*	Limit Characters
-*/
+ *	Limit Characters
+ */
 limitCharacters($element, maxLenght, endString) {
 	$element.each(function() {
 		const $this = $(this);

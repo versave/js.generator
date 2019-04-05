@@ -1,6 +1,6 @@
 /**
-*   Window Events
-*/
+ *   Window Events
+ */
 windowEvents() {
     this
     	.$win

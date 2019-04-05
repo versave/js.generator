@@ -1,6 +1,6 @@
 /**
-*   Window Events
-*/
+ *   Window Events
+ */
 app.windowEvents = function() {
     app
    		.$win

@@ -1,15 +1,17 @@
 /**
-*	Responsive Slider
-*/
-app.responsiveSlider = function($slides, activeAfter, options) {
-	$slides.each(function() {
-		var $slider = $(this);
-		var allowSlider = true;
+ *	Responsive Slick
+ */
+responsiveSlick($slides, activeAfter, options) {
+	const self = this;
 
-		app
+	$slides.each(function() {
+		const $slider = $(this);
+		const allowSlider = true;
+
+		self
 			.$win
-				.on('load resize', function() {
-					var width = app.$win.outerWidth();
+				.on('load resize', () => {
+					const width = self.$win.outerWidth();
 
 					if(width < activeAfter && allowSlider) {
 						$slider.slick(options);

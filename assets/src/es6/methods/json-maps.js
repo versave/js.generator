@@ -1,6 +1,6 @@
 /**
-*    JSON Maps
-*/
+ *    JSON Maps
+ */
 jsonMaps($map) {
     $map.each(function() {
         const $this = $(this);
@@ -18,7 +18,7 @@ jsonMaps($map) {
             response
 				.markers
                     .forEach(location => {
-                    	var marker = new google.maps.Marker({
+                    	const marker = new google.maps.Marker({
                             position: location.coordinates,
                             map,
                             icon

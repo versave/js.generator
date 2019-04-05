@@ -1,6 +1,6 @@
 /**
-*	Scrollspy
-*/
+ *	Scrollspy
+ */
 app.scrollSpy = function($trigger) {
 	$trigger.on('click', function(e) {
 		e.preventDefault();

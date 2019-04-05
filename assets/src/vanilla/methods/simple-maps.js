@@ -1,6 +1,6 @@
 /**
-*	Simple Maps
-*/
+ *	Simple Maps
+ */
 app.simpleMaps = function($mapElement) {
 	$mapElement.each(function() {
 		var $map = $(this);

@@ -1,6 +1,6 @@
 /**
-*    Equalize Height
-*/
+ *    Equalize Height
+ */
 app.equalizeHeight = function($elements, initAfter) {
     function init() {
         app
@@ -13,16 +13,15 @@ app.equalizeHeight = function($elements, initAfter) {
     function fixHeight() {
         var height  = 0;
 
-        $elements
-            .each(function() {
-                var $this = $(this);
+        $elements.each(function() {
+            var $this = $(this);
 
-                setHeight($this, 'auto');
+            setHeight($this, 'auto');
 
-                if ($this.outerHeight() > height) {
-                    height = $this.outerHeight();
-                }
-            });
+            if($this.outerHeight() > height) {
+                height = $this.outerHeight();
+            }
+        });
 
         setHeight($elements, height + 'px');
     };

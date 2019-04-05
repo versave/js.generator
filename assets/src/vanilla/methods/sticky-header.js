@@ -1,6 +1,6 @@
 /**
-*	Detect Scroll Direction
-*/
+ *	Sticky Header
+ */
 app.stickyHeader = function($header) {
 	var scrollPos = 0;
 	

@@ -1,10 +1,10 @@
 /**
-*	Accordion
-*/
-accordion($container, $trigger, closeSiblings) {
+ *	Accordion
+ */
+accordion(container, trigger, closeSiblings) {
 	const self = this;
 	
-	$trigger.on('click', function(e) {
+	$(trigger).on('click', function(e) {
 		e.preventDefault();
 
 		const $container = $(this).parents(container);

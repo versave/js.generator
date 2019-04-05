@@ -1,6 +1,6 @@
 /**
-*    Mousewheel Slick
-*/
+ *    Mousewheel Slick
+ */
 mousewheelSlick(slider, slides) {
 	const $slider = $(slider)
 	const $slides = $(slider).find(slides);

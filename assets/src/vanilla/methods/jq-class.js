@@ -1,13 +1,13 @@
 /**
-*	JS Class
-*/
-jsClass($btn) {
+ *	jQuery Class
+ */
+app.jqClass = function($btn) {
 	$btn.on('click', function(e) {
 		e.preventDefault();
 
-		const $target = getTraverse($(this));
-		const type = $(this).data('type');
-		const className = $(this).data('class');
+		var $target = getTraverse($(this));
+		var type = $(this).data('type');
+		var className = $(this).data('class');
 
 		switch(type) {
             case 'add':
@@ -23,9 +23,9 @@ jsClass($btn) {
 	});
 
 	function getTraverse($btn) {
-		const traverse = $btn.data('traverse') ? $btn.data('traverse').split('~') : '';
-		const match = traverse[0];
-		const target = $btn.data('target');
+		var traverse = $btn.data('traverse') ? $btn.data('traverse').split('~') : '';
+		var match = traverse[0];
+		var target = $btn.data('target');
 
 		switch(match) {
             case 'parent':

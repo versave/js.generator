@@ -1,6 +1,6 @@
 /*
-*	Limit Characters
-*/
+ *	Limit Characters
+ */
 app.limitCharacters = function($element, maxLenght, endString) {
 	$element.each(function() {
 		var $this = $(this);

@@ -1,6 +1,6 @@
 /**
-*	Field Quantity
-*/
+ *	Field Quantity
+ */
 app.fieldQuantity = function() {
 	$('.js-quantity__trigger').on('click', function(e) {
 		e.preventDefault();

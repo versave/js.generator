@@ -1,6 +1,6 @@
 /**
-*    Mousewheel Slick
-*/
+ *    Mousewheel Slick
+ */
 app.mousewheelSlick = function(slider, slides) {
 	var $slider = $(slider)
 	var $slides = $(slider).find(slides);

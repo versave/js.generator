@@ -1,6 +1,6 @@
 /**
-*    JSON Maps
-*/
+ *    JSON Maps
+ */
 app.jsonMaps = function($map) {
     $map.each(function() {
         var $this = $(this);

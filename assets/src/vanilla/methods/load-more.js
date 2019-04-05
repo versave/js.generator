@@ -1,6 +1,6 @@
 /**
-*	Load More
-*/
+ *	Load More
+ */
 app.loadMore = function($parent, trigger) {
 	$parent.on('click', trigger, function(e) {
 		e.preventDefault();

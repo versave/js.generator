@@ -1,6 +1,6 @@
 /**
-*	Tabs
-*/
+ *	Tabs
+ */
 app.tabs = function($tabs) {
 	$tabs.each(function() {
 		var $tabTrigger = $(this).find($(this).data('tab-trigger'));

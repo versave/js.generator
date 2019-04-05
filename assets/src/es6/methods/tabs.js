@@ -1,6 +1,6 @@
 /**
-*	Tabs
-*/
+ *	Tabs
+ */
 tabs($tabs) {
 	const self = this;
 	
