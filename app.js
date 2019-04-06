@@ -16,5 +16,7 @@ app.on('ready', () => {
 		protocol: 'file:',
 		slashes: true
 	}));
+
+	appWindow.maximize();
 })
 .on('window-all-closed', () => app.quit());
