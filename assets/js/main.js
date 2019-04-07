@@ -29,7 +29,13 @@ window.addEventListener('load', () => {
 			folder: './assets/src/es6/methods/',
 			container: '#es6-container'
 		}
-	]).init().then(() => utils.toggleLoader(false));
+	]).init().then(() => {
+		body
+			.classList
+				.add('loaded');
+		
+		setTimeout(() => utils.toggleLoader(false), 200);
+	});
 	
 	settings.jsType = document.querySelector('.tabs .tabs__head input:checked').value;
 

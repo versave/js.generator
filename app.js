@@ -8,7 +8,8 @@ let appWindow;
 app.on('ready', () => {
 	appWindow = new BrowserWindow({
 		width: 800,
-		height: 600
+		height: 600,
+		show: false
 	});
 
 	appWindow.loadURL(url.format({
@@ -16,7 +17,9 @@ app.on('ready', () => {
 		protocol: 'file:',
 		slashes: true
 	}));
-
-	appWindow.maximize();
+	
+	appWindow.on('ready-to-show', () => {
+		appWindow.maximize();
+	});
 })
 .on('window-all-closed', () => app.quit());
