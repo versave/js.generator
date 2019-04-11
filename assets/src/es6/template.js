@@ -10,6 +10,11 @@ class App {
             current: 'current',
             active: 'active'
         };
+        this.breakpoints = {
+            desktop: 1200,
+            tablet: 1024,
+            mobile: 768
+        };
         this.sliders = [
             {
                 $container: $('.slider'),

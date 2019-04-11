@@ -17,6 +17,11 @@
             current: 'current',
             active: 'active'
         };
+        app.breakpoints = {
+            desktop: 1200,
+            tablet: 1024,
+            mobile: 768
+        };
         app.sliders = [
             {
                 $container: $('.slider'),
