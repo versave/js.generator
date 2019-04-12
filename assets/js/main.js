@@ -34,7 +34,7 @@ window.addEventListener('load', () => {
 			.classList
 				.add('loaded');
 		
-		setTimeout(() => utils.toggleLoader(false), 200);
+		setTimeout(() => utils.toggleBodyClass('load', false), 200);
 	});
 	
 	settings.jsType = document.querySelector('.tabs .tabs__head input:checked').value;
@@ -70,15 +70,20 @@ document
 		.addEventListener('click', e => {
 			e.preventDefault();
 
+			utils.toggleBodyClass('inactive', true);
+
 			remote
 				.dialog
 					.showOpenDialog({properties: ['openDirectory']}, path => {
-						if(path == undefined) return;
+						if(path == undefined) {
+							utils.toggleBodyClass('inactive', false);
+							return;
+						}
 
 						const inputs = document.querySelectorAll('.tab.active input');
 						const inputsChecked = document.querySelectorAll('.tab.active input:checked');
 
-						utils.toggleLoader(true);
+						utils.toggleBodyClass('load', true);
 
 						for(const input of inputs) {
 							if(input.checked) {

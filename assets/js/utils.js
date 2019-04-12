@@ -12,7 +12,7 @@ module.exports = {
 
 		return siblings;
 	},
-	toggleLoader(condition) {
-		condition ? body.classList.add(classes.load) : body.classList.remove(classes.load);
+	toggleBodyClass(className, condition) {
+		condition ? body.classList.add(className) : body.classList.remove(className);
 	}
 };

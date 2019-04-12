@@ -80,7 +80,10 @@ module.exports = class Generator {
 						throw err;
 					}
 
-					setTimeout(() => this.utils.toggleLoader(false), 500);
+					setTimeout(() => {
+						this.utils.toggleBodyClass('load', false);
+						this.utils.toggleBodyClass('inactive', false);
+					}, 500);
 				});
 	};
 
