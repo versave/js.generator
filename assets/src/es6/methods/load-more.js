@@ -1,8 +1,8 @@
 /**
  *	Load More
  */
-loadMore($parent, trigger) {
-	$parent.on('click', trigger, function(e) {
+loadMore(parent, trigger) {
+	$(parent).on('click', trigger, function(e) {
 		e.preventDefault();
 		
 		const $btn = $(this);
