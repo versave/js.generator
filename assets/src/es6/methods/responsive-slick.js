@@ -6,7 +6,7 @@ responsiveSlick($slides, activeAfter, options) {
 
 	$slides.each(function() {
 		const $slider = $(this);
-		const allowSlider = true;
+		let allowSlider = true;
 
 		self
 			.$win
