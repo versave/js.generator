@@ -6,9 +6,9 @@ Electron based JavaScript file generator. Select all of your or built-in methods
 #### Installation
 Download the app, unzip it and run.
 
-[Download for Windows](http://google.com)<br>
-[Download for Mac](http://google.com)<br>
-[Download for Linux](http://google.com)
+[Download for Windows](https://www.dropbox.com/s/poqkb8yu183nsce/js.generator-win.zip?dl=0)<br>
+[Download for Mac](https://www.dropbox.com/s/ptbkt3y6lu5y959/js.generator-mac.zip?dl=0)<br>
+[Download for Linux](https://www.dropbox.com/s/pau4fcbjavjqrer/js.generator-linux.zip?dl=0)
 
 #### Usage
 Select a JavaScript version (Vanilla or ES6+), check all the methods you want, and generate the file in a chosen folder. The file name will be ```main.js```.
